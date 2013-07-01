@@ -1,0 +1,1 @@
+Tool to packing several JavaScript files to one file
