@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import static com.arthurspirke.jspack.utils.ServiceUtils.*;
+
 public class PackWriter {
    private String nameOfFinalFile;
    private String nameOfFinalFolder;
@@ -16,6 +18,8 @@ public class PackWriter {
 	   this.nameOfFinalFile = finalFile;
 	   this.nameOfFinalFolder = finalFolder;
 	   this.sb = new StringBuffer();
+	   sb.append(createHeaderOfFile(finalFile));
+	   sb.append(createWhiteSpace());
    }
    
    
@@ -25,9 +29,7 @@ public class PackWriter {
 	   BufferedReader bf = null;
 	   
 	   sb.append("//----------- " + fileName + " -----------");
-	   sb.append("\r\n");
-	   sb.append("\r\n");
-	   sb.append("\r\n");
+       sb.append(createWhiteSpace());
 	   
 	   try{
 		   bf = new BufferedReader(new FileReader(file));
@@ -38,9 +40,7 @@ public class PackWriter {
 			   sb.append("\r\n");
 		   }
 		   
-		   sb.append("\r\n");
-		   sb.append("\r\n");
-		   sb.append("\r\n");
+		sb.append(createWhiteSpace());
 		   
 	   } catch (IOException ex){
 		   ex.printStackTrace();
