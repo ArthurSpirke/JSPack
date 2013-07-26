@@ -3,9 +3,12 @@ package com.arthurspirke.jspack.utils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.ResourceBundle;
 
 public class ServiceUtils {
-
+  private static ResourceBundle res = ResourceBundle.getBundle("com.arthurspirke.jspack.prop");
+	
+	
 	public static String createHeaderOfFile(String finalFile) {
 		StringBuffer sb = new StringBuffer();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -31,4 +34,11 @@ public class ServiceUtils {
 		sb.append("\r\n");
 		return sb.toString();
 	}
+	
+	
+	public static String getCurrentProject(){
+		return res.getString("assembly_project");
+	}
 }
+
+

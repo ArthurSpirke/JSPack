@@ -11,10 +11,10 @@ import static com.arthurspirke.jspack.utils.ServiceUtils.*;
 
 public class PackWriter {
    private String nameOfFinalFile;
-   private String nameOfFinalFolder;
+   private File nameOfFinalFolder;
    private StringBuffer sb;
    
-   public PackWriter(String finalFile, String finalFolder){
+   public PackWriter(String finalFile, File finalFolder){
 	   this.nameOfFinalFile = finalFile;
 	   this.nameOfFinalFolder = finalFolder;
 	   this.sb = new StringBuffer();
@@ -50,7 +50,8 @@ public class PackWriter {
    
    public void createNewFile(){
 	   OutputStream out = null;
-	   File newFile = new File(nameOfFinalFolder + nameOfFinalFile);
+	   System.out.println(nameOfFinalFolder.getAbsolutePath());
+	   File newFile = new File(nameOfFinalFolder.getAbsolutePath() + "\\" + nameOfFinalFile);
 	   String allContent = sb.toString();
 	   
 	   try{
