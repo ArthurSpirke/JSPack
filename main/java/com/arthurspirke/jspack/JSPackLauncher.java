@@ -3,26 +3,25 @@ package com.arthurspirke.jspack;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ResourceBundle;
-
-import javax.print.attribute.standard.PDLOverrideSupported;
-
-import com.arthurspirke.jspack.utils.ServiceUtils;
+import java.util.List;
 
 public class JSPackLauncher {
 
 	public static void main(String[] args) throws FileNotFoundException,
 			IOException {
        
-		PropertyFactory pf = new PropertyFactory(ServiceUtils.getCurrentProject());
 
-		File[] allFiles = pf.getInputFolder().listFiles();
-        String[] allAvilableFiles = pf.getFilesToPack();        
+		Property data = new PropertyXML("C:/Users/Arthur/Documents/mwork/JSPack/JSPack/src/main/resources/com/arthurspirke/jspack/properties.xml");
+		
+        File outputFolder = new File(data.getOutputFolder());
+        String finalFileName = data.getFinalFileName();
+        File[] allFiles = new File(data.getInputFolder()).listFiles();
+        List<String> allAvilableFiles = data.getFilesToPack();
 
-		PackWriter pw = new PackWriter(pf.getfinalFile(), pf.getOutputFolder());
+		PackWriter pw = new PackWriter(finalFileName, outputFolder);
 
-		for (int i = 0; i < allAvilableFiles.length; i++) {
-			String file = allAvilableFiles[i];
+		for (int i = 0; i < allAvilableFiles.size(); i++) {
+			String file = allAvilableFiles.get(i);
 			System.out.println(file);
 			for (int j = 0; j < allFiles.length; j++) {
 				if (file.equals(allFiles[j].getName())) {

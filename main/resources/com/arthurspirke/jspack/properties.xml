@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects current="Project1">
+
+	<project name="Project1">
+	<inputFolder>C:/example</inputFolder>
+		<filesToPack>
+			<file>example1.js</file>
+			<file>example2.js</file>
+			<file>example3.js</file>
+		</filesToPack>
+		<finalFileName>finalFile.js</finalFileName>
+		<outputFolder>C:/example</outputFolder>
+	</project>
+	
+	
+		<project name="Project2">
+	<inputFolder>C:/example</inputFolder>
+		<filesToPack>
+			<file>example1.js</file>
+			<file>example2.js</file>
+			<file>example3.js</file>
+		</filesToPack>
+		<finalFileName>finalFile.js</finalFileName>
+		<outputFolder>C:/example</outputFolder>
+	</project>
+	
+</projects>
