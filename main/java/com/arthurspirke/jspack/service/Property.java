@@ -1,4 +1,4 @@
-package com.arthurspirke.jspack;
+package com.arthurspirke.jspack.service;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.arthurspirke.jspack;
+package com.arthurspirke.jspack.service.datafactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.ResourceBundle;
+
+import com.arthurspirke.jspack.service.Property;
 
 public class PropertyFile implements Property{
     @SuppressWarnings("unused")

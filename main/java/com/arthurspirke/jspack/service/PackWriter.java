@@ -1,4 +1,4 @@
-package com.arthurspirke.jspack;
+package com.arthurspirke.jspack.service;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -50,7 +50,7 @@ public class PackWriter {
    
    public void createNewFile(){
 	   OutputStream out = null;
-	   System.out.println(nameOfFinalFolder.getAbsolutePath());
+
 	   File newFile = new File(nameOfFinalFolder.getAbsolutePath() + "\\" + nameOfFinalFile);
 	   String allContent = sb.toString();
 	   

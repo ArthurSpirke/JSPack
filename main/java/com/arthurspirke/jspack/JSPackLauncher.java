@@ -1,36 +1,20 @@
 package com.arthurspirke.jspack;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
+
+import com.arthurspirke.jspack.service.CoreGenerator;
+import com.arthurspirke.jspack.service.Property;
+import com.arthurspirke.jspack.service.datafactory.PropertyXML;
 
 public class JSPackLauncher {
-
-	public static void main(String[] args) throws FileNotFoundException,
-			IOException {
+  private static final String PATH_TO_DATA = "C:/example";
+	
+	public static void main(String[] args){
        
 
-		Property data = new PropertyXML("C:/Users/Arthur/Documents/mwork/JSPack/JSPack/src/main/resources/com/arthurspirke/jspack/properties.xml");
+		Property data = new PropertyXML(PATH_TO_DATA);
+		CoreGenerator generator = new CoreGenerator(data);
 		
-        File outputFolder = new File(data.getOutputFolder());
-        String finalFileName = data.getFinalFileName();
-        File[] allFiles = new File(data.getInputFolder()).listFiles();
-        List<String> allAvilableFiles = data.getFilesToPack();
-
-		PackWriter pw = new PackWriter(finalFileName, outputFolder);
-
-		for (int i = 0; i < allAvilableFiles.size(); i++) {
-			String file = allAvilableFiles.get(i);
-			System.out.println(file);
-			for (int j = 0; j < allFiles.length; j++) {
-				if (file.equals(allFiles[j].getName())) {
-					pw.writeFileInfo(allFiles[j]);
-				}
-			}
-		}
-
-		pw.createNewFile();
+		generator.execute();
 
 	}
 
