@@ -1,6 +1,6 @@
-#JSPack - Simple tool to packing several JavaScript files to one file
+JSPack - Simple tool to packing several JavaScript files to one file
 
-##Description
+Description
 
 This tool help you assemble several JS files to one file automatically! This is very necessary thing, when you divide several JS files into logical parts for easy development, but in production you need only one main JS file.
 
