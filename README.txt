@@ -1,13 +1,13 @@
-JSPack - Simple tool to packing several JavaScript files to one file
+#JSPack - Simple tool to packing several JavaScript files to one file
 
-Description
+##Description
 
-This tool help you assemble several JS files to one file automatically! This is very necessary thing, when you divided several JS files into logical parts for easy development, but in production you need only one main JS file.
+This tool help you assemble several JS files to one file automatically! This is very necessary thing, when you divide several JS files into logical parts for easy development, but in production you need only one main JS file.
 
 
 All properties can be set in file prop.properties (folder - resources, package - com.arthurspirke.jspack).
 
-In release 0.1 we have new features for create multi-project properties. Example:
+In release 0.1 we have new features for create multi-project properties.
 
 We can create two or more projects with some rules:
 Standard options (filesToPack, inputFolder, finalFile, outputFolder) must be divided with project name (project1, for example) using "_".
